@@ -24,6 +24,14 @@
   color: black;
 }
 
+.Page-header {
+  background-color: lightpink;
+  min-height: 20vh;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
 .Select-box {
   /* height: 15rem;
   width: 15rem; */
@@ -45,6 +53,13 @@
   background-color: rgb(255, 236, 242);
   width: min-content;
   align-self: center;
+}
+
+.game-title {
+  font-size: 30px;
+  align-self: center;
+  text-align: center;
+  width: -webkit-fill-available;
 }
 /* .App-link {
   color: #61dafb;

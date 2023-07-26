@@ -1,4 +1,4 @@
-nav > a {
+.nav-bar > a {
     background-color: rgb(255, 193, 216);
     border: outset;
     border-width: 10px;
@@ -12,7 +12,7 @@ nav > a {
     text-decoration: none;
 }
 
-nav > a:hover {
+.nav-bar > a:hover {
     border-color: rgb(255, 16, 92);
     color: rgb(255, 16, 92);
     font-style: italic;

@@ -1,7 +1,16 @@
 import React from "react";
+import '../components/mininav.css';
+import Mininav from '../components/mininav'
+
 const FFXIV = () => {
     return (
-        <p>Hello from FFXIV :D</p>
+        <div className="App">
+        <header className="Page-header">
+        <Mininav />
+        <p class="game-title">Have you heard of the critically acclamined MMORPG...?</p>
+        </header>
+        </div>
+        
     )
 }
 

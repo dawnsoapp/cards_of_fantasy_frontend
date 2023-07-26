@@ -1,0 +1,12 @@
+.mini-nav {
+    height: fit-content;
+    background-color: rgb(255, 193, 216);
+    border: outset;
+    border-width: 10px;
+    border-color:rgb(254, 207, 241);
+    float: left;
+    display: flex;
+    text-align: left;
+    text-decoration: none;
+    font-size: 20px;
+}
