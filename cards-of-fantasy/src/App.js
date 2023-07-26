@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
           Welcome to Dawn's Cards of Fantasy!
         </p>
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
       </header>
+      <div class="Select-box">
+        <p>MENU</p>
+        <button class="Select-options">Talk to Dawn</button>
+        <button class="Select-options">Think Like an Astrologian</button>
+        <button class="Select-options">FFXIV</button>
+
+      </div>
     </div>
   );
 }
