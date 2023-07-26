@@ -95,6 +95,12 @@ function Game() {
           }
         };
 
+    const restartGame = () => {
+            setScore(0);
+            setCurrentQuestion(0);
+            setShowFinalScore(false);
+          };
+
 
     return (
         <div className="App">
@@ -102,49 +108,71 @@ function Game() {
         <Mininav />
         <p className="game-title">Cards of Fantasy</p>
         </header>
-        {showTutorialScreen ? (
-            <div> 
-            <h1>Think Like an Astrologian!</h1>
-            <p>You are currently in a party running a dungeon as an Astrologian!
-                Astrologians have a divining deck known as the Arcanum which 
-                buffs their fellow players to do more damage! However, each 
-                card benefits a specific class better than another! As an 
-                Astrologian, it is up to you to know which card goes to which 
-                class! Are you up for the task?
-            </p>
-            <button onClick={() => startGame()}>Start</button>
-            <button onClick={() => cardInstructions()}>About the Cards</button>
-            {showCardInstructions ? (
-                <div>
-                    <h2>How Cards Work</h2>
-                    <p>Bole is blah, Spear is yah, Link says Hayah</p>
-                </div>
-                ) 
-                : showTutorialScreen
-            }
-            </div>
-        ) 
-        :
-        (
-        <div>
-        <h3>Score: {score}</h3>
-        <h4>{questions[currentQuestion].card}</h4>
-        <h5>{questions[currentQuestion].text}</h5>
-        <ul>
-            {questions[currentQuestion].options.map((option) => {
-              return (
-                <li
-                  key={option.id}
-                  onClick={() => optionClicked(option.isCorrect)}
-                >
-                  {option.text}
-                </li>
-              );
-            })}
-          </ul>
+        {/* FINAL SCORE */}
+        {showFinalScore ? (
+        <div className="final-score"> 
+          <h1>Final Score</h1>
+          <h2>
+            {score} out of {questions.length} correct - (
+            {(score / questions.length) * 100}%)
+          </h2>
+          <button onClick={() => restartGame()}>Restart Game</button>
         </div>
-        )
+        ) 
+        : 
+        (
+        // TUTORIAL SCREEN
+        <div>
+        {showTutorialScreen ? (
+        <div> 
+        <h1>Think Like an Astrologian!</h1>
+        <p>You are currently in a party running a dungeon as an Astrologian!
+            Astrologians have a divining deck known as the Arcanum which 
+            buffs their fellow players to do more damage! However, each 
+            card benefits a specific class better than another! As an 
+            Astrologian, it is up to you to know which card goes to which 
+            class! Are you up for the task?
+        </p>
+        <button onClick={() => startGame()}>Start</button>
+        <button onClick={() => cardInstructions()}>About the Cards</button>
+
+        {/* ABOUT CARDS */}
+        {showCardInstructions ? (
+            <div>
+                <h2>How Cards Work</h2>
+                <p>Bole is blah, Spear is yah, Link says Hayah</p>
+            </div>
+            ) 
+            : 
+        (showTutorialScreen)
         }
+        </div>
+    ) 
+    :
+    (
+        // QUESTIONS
+    <div>
+    <h3>Score: {score}</h3>
+    <h4>{questions[currentQuestion].card}</h4>
+    <h5>{questions[currentQuestion].text}</h5>
+    <ul>
+        {questions[currentQuestion].options.map((option) => {
+          return (
+            <li
+              key={option.id}
+              onClick={() => optionClicked(option.isCorrect)}
+            >
+              {option.text}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+    )}
+    </div>
+    )}
+
+        
         
         </div>
     )
