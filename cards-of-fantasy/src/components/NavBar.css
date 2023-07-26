@@ -1,0 +1,19 @@
+nav > a {
+    background-color: rgb(255, 193, 216);
+    border: outset;
+    border-width: 10px;
+    border-color:rgb(254, 207, 241);
+    display: flex;
+    align-items: center;
+    padding: 1rem; 
+    margin: 1rem;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav > a:hover {
+    border-color: rgb(255, 16, 92);
+    color: rgb(255, 16, 92);
+    font-style: italic;
+}
