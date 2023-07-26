@@ -11,8 +11,8 @@ const Home = () => {
             Welcome to Dawn's Cards of Fantasy!
           </p>
         </header>
-        <div class="Select-box">
-          <p class="menu-title">MENU</p>
+        <div className="Select-box">
+          <p className="menu-title">MENU</p>
             <Navbar />
         </div>
       </div>

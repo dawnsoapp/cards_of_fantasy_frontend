@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 // import NavBar from "./components/NavBar"
 // import "./components/NavBar.css"
@@ -11,7 +11,7 @@ import Game from './pages/game';
 
 function App() {
   return (
-
+    <div>
     <Routes>
       <Route index element={<Home />} />
       <Route element={<Home />} path="home" />
@@ -20,21 +20,9 @@ function App() {
       <Route element={<Game />} path="game" />
     </Routes>
 
-    // <div className="App">
-    //   <header className="App-header">
-    //     <p>
-    //       Welcome to Dawn's Cards of Fantasy!
-    //     </p>
-    //   </header>
-    //   <div class="Select-box">
-    //     <p>MENU</p>
-    //     <button class="Select-options">Talk to Dawn</button>
-    //     <button class="Select-options">Think Like an Astrologian</button>
-    //     <button class="Select-options">FFXIV</button>
 
-    //   </div>
-    // </div>
-  );
-}
+    
+    </div>
+)}
 
 export default App;

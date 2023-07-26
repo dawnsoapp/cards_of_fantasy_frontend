@@ -7,7 +7,7 @@ const FFXIV = () => {
         <div className="App">
         <header className="Page-header">
         <Mininav />
-        <p class="game-title">Have you heard of the critically acclamined MMORPG...?</p>
+        <p className="game-title">Have you heard of the critically acclamined MMORPG...?</p>
         </header>
         </div>
         

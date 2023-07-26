@@ -4,7 +4,7 @@ import React from "react";
 const Mininav = () => {
     return (
         <>
-        <nav class="mini-nav">
+        <nav className="mini-nav">
             <NavLink to="/home">Back</NavLink>
         </nav>
         </>

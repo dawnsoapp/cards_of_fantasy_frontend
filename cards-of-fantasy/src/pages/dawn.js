@@ -7,7 +7,7 @@ const Dawn = () => {
         <div className="App">
         <header className="Page-header">
         <Mininav />
-        <p class="game-title">Chat with Dawn!</p>
+        <p className="game-title">Chat with Dawn!</p>
         </header>
         </div>
         
