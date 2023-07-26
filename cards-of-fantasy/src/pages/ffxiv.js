@@ -1,8 +1,7 @@
+import React from "react";
 const FFXIV = () => {
     return (
-        <>
         <p>Hello from FFXIV :D</p>
-        </>
     )
 }
 

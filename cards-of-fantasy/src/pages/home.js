@@ -1,4 +1,5 @@
 import '../App.css';
+import React from "react";
 import '../components/NavBar.css';
 import Navbar from '../components/NavBar'
 
@@ -11,12 +12,8 @@ const Home = () => {
           </p>
         </header>
         <div class="Select-box">
-          <p>MENU</p>
+          <p class="menu-title">MENU</p>
             <Navbar />
-          {/* <button class="Select-options">Talk to Dawn</button>
-          <button class="Select-options">Think Like an Astrologian</button>
-          <button class="Select-options">FFXIV</button> */}
-  
         </div>
       </div>
     )

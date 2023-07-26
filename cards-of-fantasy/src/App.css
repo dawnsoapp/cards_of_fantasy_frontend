@@ -25,6 +25,8 @@
 }
 
 .Select-box {
+  /* height: 15rem;
+  width: 15rem; */
   background-color: rgb(251, 161, 206);
   display: flex;
   flex-direction: column;
@@ -33,51 +35,17 @@
   padding: 1rem;
   margin: 10px;
   text-align: center;
-  font-size: 30px;
-  font-style: oblique;
   border: outset;
   border-width: 10px;
   border-color: rgb(254, 207, 224);
 }
 
-.Select-options {
-  background-color: rgb(255, 193, 216);
-  border: outset;
-  border-width: 10px;
-  border-color:rgb(254, 207, 241);
-  display: flex;
-  align-items: center;
-  padding: 1rem; 
-  margin: 0.5rem;
-  color: black;
-  text-align: center;
+.menu-title {
+  font-size: 30px;
+  background-color: rgb(255, 236, 242);
+  width: min-content;
+  align-self: center;
 }
-
-.Select-options:hover {
-  border-color: rgb(255, 16, 92);
-  color: rgb(255, 16, 92);
-  font-style: italic;
-}
-
-.NavLink {
-  background-color: rgb(255, 193, 216);
-  border: outset;
-  border-width: 10px;
-  border-color:rgb(254, 207, 241);
-  display: flex;
-  align-items: center;
-  padding: 1rem; 
-  margin: 0.5rem;
-  color: black;
-  text-align: center;
-}
-
-.NavLink:hover {
-  border-color: rgb(255, 16, 92);
-  color: rgb(255, 16, 92);
-  font-style: italic;
-}
-
 /* .App-link {
   color: #61dafb;
 } */
