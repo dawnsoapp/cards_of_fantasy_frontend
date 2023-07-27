@@ -106,15 +106,13 @@ function Game() {
         <div className="App">
         <header className="Page-header">
         <Mininav />
-        <p className="game-title">Cards of Fantasy</p>
         </header>
         {/* FINAL SCORE */}
         {showFinalScore ? (
         <div className="final-score"> 
           <h1>Final Score</h1>
           <h2>
-            {score} out of {questions.length} correct - (
-            {(score / questions.length) * 100}%)
+            {score} out of {questions.length} correct!
           </h2>
           <button onClick={() => restartGame()}>Play Again?</button>
         </div>
@@ -156,13 +154,13 @@ function Game() {
     (
         // THE GAME
     <div>
+    <p className="score">Score: {score}</p>
     <div className="battle-box">
         <div className="caster">CASTER</div>
         <div className="melee">MELEE</div>
         <div className="tank">TANK</div>
         <div className="monster">MONSTER</div>
     </div>
-    <p className="score">Score: {score}</p>
     <h3>{questions[currentQuestion].card}</h3>
     <h4>{questions[currentQuestion].text}</h4>
     <ul className="question-box">
