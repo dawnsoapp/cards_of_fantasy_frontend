@@ -116,7 +116,7 @@ function Game() {
             {score} out of {questions.length} correct - (
             {(score / questions.length) * 100}%)
           </h2>
-          <button onClick={() => restartGame()}>Restart Game</button>
+          <button onClick={() => restartGame()}>Play Again?</button>
         </div>
         ) 
         : 
@@ -126,7 +126,7 @@ function Game() {
         {showTutorialScreen ? (
         <div> 
         <h1>Think Like an Astrologian!</h1>
-        <p>You are currently in a party running a dungeon as an Astrologian!
+        <p className="instructions">You are currently in a party running a dungeon as an Astrologian!
             Astrologians have a divining deck known as the Arcanum which 
             buffs their fellow players to do more damage! However, each 
             card benefits a specific class better than another! As an 
@@ -140,7 +140,11 @@ function Game() {
         {showCardInstructions ? (
             <div>
                 <h2>How Cards Work</h2>
-                <p>Bole is blah, Spear is yah, Link says Hayah</p>
+                <p>Magic Cards: Ewer, Spire and Bole
+                <li>These will strengthen Casters & Healers!</li>
+                Physical Cards: Spear, Arrow and Balance
+                <li>These will strengthen DPS & Tanks!</li>
+                </p>
             </div>
             ) 
             : 
@@ -150,15 +154,21 @@ function Game() {
     ) 
     :
     (
-        // QUESTIONS
+        // THE GAME
     <div>
-    <h3>Score: {score}</h3>
-    <h4>{questions[currentQuestion].card}</h4>
-    <h5>{questions[currentQuestion].text}</h5>
-    <ul>
+    <div className="battle-box">
+        <div className="caster">CASTER</div>
+        <div className="melee">MELEE</div>
+        <div className="tank">TANK</div>
+        <div className="monster">MONSTER</div>
+    </div>
+    <p className="score">Score: {score}</p>
+    <h3>{questions[currentQuestion].card}</h3>
+    <h4>{questions[currentQuestion].text}</h4>
+    <ul className="question-box">
         {questions[currentQuestion].options.map((option) => {
           return (
-            <li
+            <li className="option-boxes"
               key={option.id}
               onClick={() => optionClicked(option.isCorrect)}
             >

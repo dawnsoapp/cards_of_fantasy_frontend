@@ -1,0 +1,105 @@
+.instructions {
+    font-size: 35px;
+    text-align: center;
+}
+
+.battle-box {
+    background-color: lightgreen;
+    min-height: 30vh;
+    display: flex;
+    border: inset;
+    border-color: black;
+    border-width: 10px;
+}
+
+.tank {
+    display: flex;
+    height: 70px;
+    width: 70px;
+    padding: 1rem;
+    margin: 25px;
+    margin-top: 40px;
+    background-color: blue;
+    color: black;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+.melee {
+    display: flex;
+    height: 70px;
+    width: 70px;
+    padding: 1rem;
+    margin: 25px;
+    margin-top: 40px;
+    background-color: red;
+    color: black;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+.caster {
+    display: flex;
+    height: 70px;
+    width: 70px;
+    padding: 1rem;
+    margin: 25px;
+    margin-top: 40px;
+    background-color: purple;
+    color: black;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+.monster {
+    display: flex;
+    height: 70px;
+    width: 70px;
+    padding: 1rem;
+    margin-left: 150px;
+    margin-top: 40px;
+    background-color: yellow;
+    color: black;
+    border: solid;
+    border-color: black;
+    border-width: 5px;
+}
+
+.score {
+    display: flex;
+    text-align: right;
+    justify-content: right;
+    background-color: pink;
+    font-size: 25px;
+
+}
+
+.question-box {
+    padding: 10px;
+    margin: 40px;
+    background-color: rgb(255, 221, 226);
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.option-boxes {
+    background-color: pink;
+    margin: 10px;
+    border: outset;
+    border-radius: 25px;
+    border-width: 5px;
+    border-color: palevioletred;
+    font-size: 35px;
+}
+
+.option-boxes:hover {
+    border-color: white;
+    color: hotpink;
+}
