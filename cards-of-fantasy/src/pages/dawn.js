@@ -9,32 +9,37 @@ function Dawn() {
     const [currentPrompt, setCurrentPrompt] = useState(0);
 
     const dawn = "Dawn";
-    // const user = username;
 
     let story = [
         {   
             storyPrompt: 0,
             speaker: dawn,
-            user: username,
             text: "Hello there! My name is Dawn! Dawn Soap. Not sponsored by the dishsoap by the way! I'm a certified master of the Astrologian class."
         },
         {
             storyPrompt: 0,
             speaker: dawn,
-            user: username,
             text: "What's your name?"
         },
         {
             storyPrompt: 0,
             speaker: dawn,
-            user: username,
             text: "Hello " + (username) + "! It's so nice to meet you."
         },
         {
             storyPrompt: 0,
             speaker: dawn,
-            user: username,
             text: "Would you like a tour around my room? Or would you like to venture outside for a bit?"
+        },
+        {
+            storyPrompt: 1,
+            speaker: dawn,
+            text: "So you would like to stay in? Same, the AC is pretty nice this time of year."
+        },
+        {
+            storyPrompt: 1,
+            speaker: dawn,
+            text: "Are you interested in my globe? Isn't it cute!?"
         }
     ]
     const [newText, setNewText] = useState(0)
@@ -43,6 +48,9 @@ function Dawn() {
     const clickText = () => {
         if ((story[newText].storyPrompt) === currentPrompt) {
             setNewText(newText + 1);
+            console.log('story is at:', story[newText].storyPrompt);
+            console.log('text is at:', newText);
+            console.log('current is at:', currentPrompt);
             return story[newText].text;
         };
     }
@@ -52,6 +60,15 @@ function Dawn() {
             console.log(username);
         
         return username;
+    }
+
+    const changeRoute = () => {
+        if ((story[newText].storyPrompt) !== currentPrompt) {
+            setCurrentPrompt((story[newText].storyPrompt));
+            console.log(currentPrompt)
+            setNewText(newText);
+            return story[newText].text;
+        }
     }
 
 
@@ -71,7 +88,6 @@ function Dawn() {
         <button onClick={clickText}>Submit</button>
         </label>
         
-
         
         <p>Your Name: {username}</p>
         </div>
