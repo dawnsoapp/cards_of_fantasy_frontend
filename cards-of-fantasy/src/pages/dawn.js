@@ -9,7 +9,7 @@ function Dawn() {
     const [currentPrompt, setCurrentPrompt] = useState(0);
 
     const dawn = "Dawn";
-    const user = username;
+    // const user = username;
 
     let story = [
         {   
@@ -28,7 +28,13 @@ function Dawn() {
             storyPrompt: 0,
             speaker: dawn,
             user: username,
-            text: "Hello" + {user} + " !"
+            text: "Hello " + (username) + "! It's so nice to meet you."
+        },
+        {
+            storyPrompt: 0,
+            speaker: dawn,
+            user: username,
+            text: "Would you like a tour around my room? Or would you like to venture outside for a bit?"
         }
     ]
     const [newText, setNewText] = useState(0)
@@ -41,12 +47,11 @@ function Dawn() {
         };
     }
 
-    const submitName = () => {
-        if (user) {
-            setUsername(user);
-        }
+    const submitName = event => {
+            setUsername(event.target.value);
+            console.log(username);
         
-        return console.log(username);
+        return username;
     }
 
 
@@ -58,9 +63,16 @@ function Dawn() {
         </header>
         <p onClick={() => clickText()}>{story[newText].text}</p>
         <label>
-            Name: <input name={user} type="string"/>
+            Name: <input 
+            type="string" 
+            name="username"
+            onChange={submitName}
+            value={username}/>
+        <button onClick={clickText}>Submit</button>
         </label>
-        <button onClick={submitName}>Submit</button>
+        
+
+        
         <p>Your Name: {username}</p>
         </div>
         
