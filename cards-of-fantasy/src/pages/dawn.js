@@ -14,7 +14,7 @@ function Dawn() {
         {   
             storyPrompt: 0,
             speaker: dawn,
-            text: "Hello there! My name is Dawn! Dawn Soap. Not sponsored by the dishsoap by the way! I'm a certified master of the Astrologian class."
+            text: "Hello there, my name is " + (dawn) + "! Dawn Soap. Not sponsored by the dishsoap, sadly! I'm a certified master of the Astrologian class."
         },
         {
             storyPrompt: 0,
@@ -40,10 +40,25 @@ function Dawn() {
             storyPrompt: 1,
             speaker: dawn,
             text: "Are you interested in my globe? Isn't it cute!?"
+        },
+        {
+            storyPrompt: 2,
+            speaker: dawn,
+            text: "Sounds great! Would love to get some air and touch grass."
         }
     ]
-    const [newText, setNewText] = useState(0)
-// const [optionsCurrentPrompt, setOptionsCurrentPrompt] = useState(0);
+
+    let choices = [
+        {
+            options: [
+                {id:0, text:"Stay Inside", route:1},
+                {id:1, text:"Let's go outside!", route:2}
+            ]
+        }
+    ]
+
+    const [newText, setNewText] = useState(0);
+    const [selectChoice, setSelectChoice] = useState(0);
 
     const clickText = () => {
         if ((story[newText].storyPrompt) === currentPrompt) {
@@ -52,7 +67,22 @@ function Dawn() {
             console.log('text is at:', newText);
             console.log('current is at:', currentPrompt);
             return story[newText].text;
-        };
+        } else{
+            changeRoute();
+        }
+    }
+
+    const changeRoute = (route) => {
+        if (currentPrompt !== route) {
+            console.log(route);
+            setCurrentPrompt(route);
+            return console.log('current:', currentPrompt, 'choice:', selectChoice);
+            // setSelectChoice(choices.options[route])
+            // setCurrentPrompt(choices.options[route]);
+            // console.log(currentPrompt)
+            // setNewText(newText);
+            // return story[newText].text;
+        }
     }
 
     const submitName = event => {
@@ -60,15 +90,6 @@ function Dawn() {
             console.log(username);
         
         return username;
-    }
-
-    const changeRoute = () => {
-        if ((story[newText].storyPrompt) !== currentPrompt) {
-            setCurrentPrompt((story[newText].storyPrompt));
-            console.log(currentPrompt)
-            setNewText(newText);
-            return story[newText].text;
-        }
     }
 
 
@@ -87,9 +108,20 @@ function Dawn() {
             value={username}/>
         <button onClick={clickText}>Submit</button>
         </label>
-        
-        
         <p>Your Name: {username}</p>
+
+        <ul>
+        {choices[selectChoice].options.map((option) => {
+          return (
+            <li
+              key={option.id}
+              onClick={() => changeRoute(option.route)}>
+              {option.text}
+            </li>
+          );
+        })}
+      </ul>
+
         </div>
         
     )
