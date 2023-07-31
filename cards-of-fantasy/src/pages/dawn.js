@@ -4,9 +4,11 @@ import Mininav from '../components/mininav'
 
 
 function Dawn() {
-
+    
     const [username, setUsername] = useState("");
     const [currentPrompt, setCurrentPrompt] = useState(0);
+    const [newText, setNewText] = useState(0);
+    const [selectChoice, setSelectChoice] = useState(0);
 
     const dawn = "Dawn";
 
@@ -48,24 +50,19 @@ function Dawn() {
         }
     ]
 
-    let choices = [
-        {
+    let choices = {
             options: [
                 {id:0, text:"Stay Inside", route:1},
                 {id:1, text:"Let's go outside!", route:2}
             ]
         }
-    ]
 
-    const [newText, setNewText] = useState(0);
-    const [selectChoice, setSelectChoice] = useState(0);
+
 
     const clickText = () => {
         if ((story[newText].storyPrompt) === currentPrompt) {
-            setNewText(newText + 1);
-            console.log('story is at:', story[newText].storyPrompt);
-            console.log('text is at:', newText);
-            console.log('current is at:', currentPrompt);
+            console.log('text before state update:', newText)
+            setNewText(newText + 1)
             return story[newText].text;
         } else{
             changeRoute();
@@ -74,14 +71,19 @@ function Dawn() {
 
     const changeRoute = (route) => {
         if (currentPrompt !== route) {
-            console.log(route);
-            setCurrentPrompt(route);
-            return console.log('current:', currentPrompt, 'choice:', selectChoice);
-            // setSelectChoice(choices.options[route])
-            // setCurrentPrompt(choices.options[route]);
-            // console.log(currentPrompt)
-            // setNewText(newText);
-            // return story[newText].text;
+            for(const obj of choices.options) {
+                if (route === obj.route){
+                    setCurrentPrompt(route);
+                    setSelectChoice(route);
+                    for(const item of story) {
+                        if (item.storyPrompt === currentPrompt){
+                            setNewText(newText)
+                            return story[newText].text;
+                        }
+                    }
+                }
+            }
+            
         }
     }
 
@@ -111,7 +113,7 @@ function Dawn() {
         <p>Your Name: {username}</p>
 
         <ul>
-        {choices[selectChoice].options.map((option) => {
+        {choices.options.map((option) => {
           return (
             <li
               key={option.id}
