@@ -13,6 +13,7 @@ function Dawn() {
     // const [selectChoice, setSelectChoice] = useState(0);
 
     const dawn = "Dawn";
+    const user = (username);
     const intro = "intro";
     const stay_inside = "stay_inside";
     const go_outside = "go_outside";
@@ -35,7 +36,7 @@ function Dawn() {
                 storyPrompt: 0,
                 storyRoute: intro,
                 speaker: dawn,
-                text: "Hello " + (username) + "! It's so nice to meet you."
+                text: "Hello " + (user) + "! It's so nice to meet you."
             },
             {
                 storyPrompt: 0,
@@ -90,7 +91,7 @@ function Dawn() {
         } 
         if ((newText + 1) >= currentRoute.length) {
             setChoiceBox(true);
-          }
+        }
 
         if ((currentRoute[newText].storyPrompt) === currentPrompt) {
             setNewText(newText + 1)
@@ -103,7 +104,7 @@ function Dawn() {
             for(const obj of choices.options) {
                 if (route === obj.route) {
                     setCurrentPrompt(obj.route);
-                    changeStory(currentPrompt);
+                    changeStory(obj.route);
                     setChoiceBox(false);
                 }
             }
