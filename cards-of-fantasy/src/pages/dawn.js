@@ -8,7 +8,6 @@ function Dawn() {
     const [username, setUsername] = useState("");
     const [currentPrompt, setCurrentPrompt] = useState(0);
     const [newText, setNewText] = useState(0);
-    const [showTextBox, setTextBox] = useState(true);
     const [showNameBox, setNameBox] = useState(false);
     const [showChoiceBox, setChoiceBox] = useState(false);
     // const [selectChoice, setSelectChoice] = useState(0);
@@ -86,32 +85,33 @@ function Dawn() {
     const [currentRoute, setCurrentRoute] = useState(story["intro"]);
 
     const clickText = () => {
+        if (story.intro[1]) {
+            setNameBox(true);
+        } 
+        if ((newText + 1) >= currentRoute.length) {
+            setChoiceBox(true);
+          }
+
         if ((currentRoute[newText].storyPrompt) === currentPrompt) {
             setNewText(newText + 1)
             return currentRoute[newText].text;
-        } else{
-            changeRoute();
-            // setNewText(newText + 1);
-            // return currentRoute[newText].text
-        }
+        } 
     }
 
     const changeRoute = (route) => {
         if (route !== currentPrompt) {
             for(const obj of choices.options) {
                 if (route === obj.route) {
-                    // console.log("prompt: ", currentPrompt);
-                    // console.log("route: ", currentRoute[newText].storyPrompt)
                     setCurrentPrompt(obj.route);
                     changeStory(currentPrompt);
-                    return currentRoute[newText].text;
+                    setChoiceBox(false);
                 }
             }
         }
     }
     
     const changeStory = (currentPrompt) => {
-        if (currentPrompt !== currentRoute[newText].storyPrompt) {
+
             for (const obj in story) {
                 if (story[obj][0].storyPrompt === currentPrompt) {
                     setNewText(0);
@@ -119,7 +119,6 @@ function Dawn() {
                     return currentRoute
                 }
             }
-        }
     }
 
 
@@ -137,32 +136,38 @@ function Dawn() {
         <Mininav />
         <p className="game-title">Chat with Dawn!</p>
         </header>
-        <p onClick={() => clickText()}>{currentRoute[newText].text}</p>
+        {showChoiceBox ? (
+            <ul>
+            {choices.options.map((option) => {
+            return (
+                <li
+                key={option.id}
+                onClick={() => changeRoute(option.route)}>
+                {option.text}
+                </li>
+            );
+            })}
+        </ul>
+        )
+        :
+        (
+            <div>
+            <p onClick={() => clickText()}>{currentRoute[newText].text}</p>
+            </div>
+        )
+        }
+
         <label>
-            Name: <input 
-            type="string" 
+            Name: <input
+            type="string"
             name="username"
             onChange={submitName}
             value={username}/>
-        <button onClick={clickText}>Submit</button>
+            <button onClick={clickText}>Submit</button>
         </label>
-        <p>Your Name: {username}</p>
-
-        <ul>
-        {choices.options.map((option) => {
-          return (
-            <li
-              key={option.id}
-              onClick={() => changeRoute(option.route)}>
-              {option.text}
-            </li>
-          );
-        })}
-      </ul>
 
         </div>
-        
-    )
-}
+    );
+};
 
 export default Dawn;
