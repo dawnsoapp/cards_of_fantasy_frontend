@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import './dawn.css'
 import '../components/mininav.css';
 import Mininav from '../components/mininav'
 
@@ -10,10 +11,10 @@ function Dawn() {
     const [newText, setNewText] = useState(0);
     const [showNameBox, setNameBox] = useState(false);
     const [showChoiceBox, setChoiceBox] = useState(false);
-    // const [selectChoice, setSelectChoice] = useState(0);
+    // useEffect(() => {user = username}, [username])
 
     const dawn = "Dawn";
-    const user = (username);
+    const user = username;
     const intro = "intro";
     const stay_inside = "stay_inside";
     const go_outside = "go_outside";
@@ -36,13 +37,21 @@ function Dawn() {
                 storyPrompt: 0,
                 storyRoute: intro,
                 speaker: dawn,
+                text: "Player Choose Choice:"
+            },
+            {
+                storyPrompt: 0,
+                storyRoute: intro,
+                speaker: dawn,
+                user: username,
                 text: "Hello " + (user) + "! It's so nice to meet you."
             },
             {
                 storyPrompt: 0,
                 storyRoute: intro,
                 speaker: dawn,
-                text: "Would you like a tour around my room? Or would you like to venture outside for a bit?"
+                user: username,
+                text: "So, " + (user) + " would you like a tour around my room? Or would you like to venture outside for a bit?"
             },
         ],
         "stay_inside": [
@@ -76,19 +85,35 @@ function Dawn() {
         
     }
 
-    let choices = {
+    let choices = [
+        {
             options: [
                 {id:0, text:"Stay Inside", route:1},
                 {id:1, text:"Let's go outside!", route:2}
             ]
+        },
+        {
+            options: [
+                {id:0, text: "What does that orb do?", route: 3},
+                {id:1, text: "How did you get it?", route: 5}
+            ]
+        },
+        {
+            options: [
+                {id:0, text: "A tank...to a healer?", route: 4},
+                {id:1, text: "What was being a warrior like?", route: 6}
+            ]
         }
+    ]
 
     const [currentRoute, setCurrentRoute] = useState(story["intro"]);
 
     const clickText = () => {
-        if (story.intro[1]) {
+        if (currentRoute[newText].text === "What's your name?") {
             setNameBox(true);
-        } 
+        }else {
+            setNameBox(false);
+        }
         if ((newText + 1) >= currentRoute.length) {
             setChoiceBox(true);
         }
@@ -101,7 +126,7 @@ function Dawn() {
 
     const changeRoute = (route) => {
         if (route !== currentPrompt) {
-            for(const obj of choices.options) {
+            for(const obj of choices[currentPrompt].options) {
                 if (route === obj.route) {
                     setCurrentPrompt(obj.route);
                     changeStory(obj.route);
@@ -112,7 +137,6 @@ function Dawn() {
     }
     
     const changeStory = (currentPrompt) => {
-
             for (const obj in story) {
                 if (story[obj][0].storyPrompt === currentPrompt) {
                     setNewText(0);
@@ -125,9 +149,9 @@ function Dawn() {
 
     const submitName = event => {
             setUsername(event.target.value);
-            console.log(username);
-        
-        return username;
+            console.log(event.target.value);
+            return username;
+
     }
 
 
@@ -137,35 +161,49 @@ function Dawn() {
         <Mininav />
         <p className="game-title">Chat with Dawn!</p>
         </header>
+        <div>
         {showChoiceBox ? (
-            <ul>
-            {choices.options.map((option) => {
+            <div className="chat">
+            {choices[currentPrompt].options.map((option) => {
             return (
-                <li
+                <ul
+                className="choice-box"
                 key={option.id}
                 onClick={() => changeRoute(option.route)}>
                 {option.text}
-                </li>
+                </ul>
             );
             })}
-        </ul>
+        </div>
         )
         :
         (
             <div>
-            <p onClick={() => clickText()}>{currentRoute[newText].text}</p>
+                {showNameBox ? (
+                <label>
+                    Name: <input
+                    type="string"
+                    name="username"
+                    onChange={submitName}
+                    value={username}/>
+                    <button onClick={clickText}>Submit</button>
+                    <p>Your Name: {username}</p>
+                </label>
+        )
+        :
+        (
+            <div className="chat">
+                <h1 className="speaker-box">{dawn}</h1>
+                <div className="text-box" onClick={() => clickText()}>
+                <p>{currentRoute[newText].text}</p>
+                </div>
             </div>
+            
+        )
+        }</div>
         )
         }
-
-        <label>
-            Name: <input
-            type="string"
-            name="username"
-            onChange={submitName}
-            value={username}/>
-            <button onClick={clickText}>Submit</button>
-        </label>
+        </div>
 
         </div>
     );
