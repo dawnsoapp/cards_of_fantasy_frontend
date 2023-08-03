@@ -7,6 +7,7 @@ import Home from './pages/home';
 import Dawn from './pages/dawn';
 import FFXIV from './pages/ffxiv';
 import Game from './pages/game';
+import About from './pages/about';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route element={<Dawn />} path="dawn" />
       <Route element={<FFXIV />} path="ffxiv" />
       <Route element={<Game />} path="game" />
+      <Route element={<About />} path="about" />
     </Routes>
 
 

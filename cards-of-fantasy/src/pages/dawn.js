@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './dawn.css'
 import '../components/mininav.css';
 import Mininav from '../components/mininav'
@@ -155,7 +155,7 @@ function Dawn() {
         :
         (
             <div className="chat">
-                <h1 className="speaker-box">{dawn}</h1>
+                <h1 className="speaker-box">{currentRoute[newText].speaker}</h1>
                 <div className="text-box" onClick={() => clickText()}>
                 <p>{currentRoute[newText].text}</p>
                 </div>
