@@ -6,15 +6,11 @@ import Mininav from '../components/mininav'
 
 function Dawn() {
     
-    const [username, setUsername] = useState("");
     const [currentPrompt, setCurrentPrompt] = useState(0);
     const [newText, setNewText] = useState(0);
-    const [showNameBox, setNameBox] = useState(false);
     const [showChoiceBox, setChoiceBox] = useState(false);
-    // useEffect(() => {user = username}, [username])
 
     const dawn = "Dawn";
-    const user = username;
     const intro = "intro";
     const stay_inside = "stay_inside";
     const go_outside = "go_outside";
@@ -31,27 +27,19 @@ function Dawn() {
                 storyPrompt: 0,
                 storyRoute: intro,
                 speaker: dawn,
-                text: "What's your name?"
+                text: "You look like you're new here...? Are you looking to become a healer, too? Or...no!"
             },
             {
                 storyPrompt: 0,
                 storyRoute: intro,
                 speaker: dawn,
-                text: "Player Choose Choice:"
+                text: "You're here for a tour! Sorry, I can be quite forgetful. 'Tour Guide' was in my resume, after all."
             },
             {
                 storyPrompt: 0,
                 storyRoute: intro,
                 speaker: dawn,
-                user: username,
-                text: "Hello " + (user) + "! It's so nice to meet you."
-            },
-            {
-                storyPrompt: 0,
-                storyRoute: intro,
-                speaker: dawn,
-                user: username,
-                text: "So, " + (user) + " would you like a tour around my room? Or would you like to venture outside for a bit?"
+                text: "So, would you like a tour around my room? Or would you like to venture outside for a bit?"
             },
         ],
         "stay_inside": [
@@ -109,11 +97,6 @@ function Dawn() {
     const [currentRoute, setCurrentRoute] = useState(story["intro"]);
 
     const clickText = () => {
-        if (currentRoute[newText].text === "What's your name?") {
-            setNameBox(true);
-        }else {
-            setNameBox(false);
-        }
         if ((newText + 1) >= currentRoute.length) {
             setChoiceBox(true);
         }
@@ -147,13 +130,6 @@ function Dawn() {
     }
 
 
-    const submitName = event => {
-            setUsername(event.target.value);
-            console.log(event.target.value);
-            return username;
-
-    }
-
 
     return (
         <div className="App">
@@ -178,29 +154,13 @@ function Dawn() {
         )
         :
         (
-            <div>
-                {showNameBox ? (
-                <label>
-                    Name: <input
-                    type="string"
-                    name="username"
-                    onChange={submitName}
-                    value={username}/>
-                    <button onClick={clickText}>Submit</button>
-                    <p>Your Name: {username}</p>
-                </label>
-        )
-        :
-        (
             <div className="chat">
                 <h1 className="speaker-box">{dawn}</h1>
                 <div className="text-box" onClick={() => clickText()}>
                 <p>{currentRoute[newText].text}</p>
                 </div>
             </div>
-            
-        )
-        }</div>
+        
         )
         }
         </div>

@@ -18,6 +18,10 @@
     font-size: 20px;
 }
 
+.choice-box:hover {
+    cursor: pointer;
+}
+
 .text-box {
         background-color: pink;
         padding: 20px;
@@ -30,6 +34,10 @@
         align-self: center;
         text-align: center;
         font-size: 20px;
+}
+
+.text-box:hover {
+    cursor: pointer;
 }
 
 .speaker-box {
