@@ -1,5 +1,36 @@
 .slideshow-box {
     display: flex;
     flex-direction: column;
-    
+    /* flex-wrap: wrap; */
+    width: 50%;
+    /* align-items: center;
+    align-content: center; */
+    background-color: pink;
+    border: outset;
+    border-color: palevioletred;
+    border-width: 10px;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+
 }
+
+.sliderimg {
+    width: 90%;
+    height: 50%;
+    border: inset;
+    border-color: palevioletred;
+    border-width: 10px;
+    object-fit: contain;
+}
+
+.alice-carousel__prev-btn-wrapper {
+    text-align: center;
+}
+
+.alice-carousel__stage-item.__active.__target {
+    width: 500px;
+}
+
+
+
