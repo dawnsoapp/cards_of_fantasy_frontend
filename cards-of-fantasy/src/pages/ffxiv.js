@@ -19,6 +19,7 @@ function FFXIV() {
         </header>
         <div className="info-box">
             <h1>What is Final Fantasy?</h1>
+            <p>Final Fantasy is a game created by Square Enix.</p>
         </div>
         <div className="slideshow-box">
             <AliceCarousel autoplay autoPlayInterval="5" style="width: 500px">
