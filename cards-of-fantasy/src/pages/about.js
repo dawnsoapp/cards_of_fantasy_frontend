@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import '../App.css';
 import '../components/mininav.css';
 import Mininav from '../components/mininav'
