@@ -11,10 +11,6 @@ import community2 from '../imgs/community2.png';
 
 function FFXIV() {
 
-    const handleLinkClick = (event, message) => {
-        console.log('Link element clicked');
-        console.log(message);
-    }
     return (
         <div className="App">
         <header className="Page-header">
@@ -30,11 +26,35 @@ function FFXIV() {
                 rel="noreferrer">
                 <img src={dawntrail} className="sliderimg" alt=""/>
                 </a>
-            <footer>New expansion coming Summer 2024!</footer>
+                <footer>New expansion coming Summer 2024!</footer>
             </p>
-            <p><img src={fanfest} className="sliderimg" alt=""/></p>
-            <p><img src={community1} className="sliderimg" alt=""/></p>
-            <p><img src={community2} className="sliderimg"alt=""/></p>
+            <p>
+                <a
+                href="https://fanfest.finalfantasyxiv.com/"
+                target="_blank"
+                rel="noreferrer">
+                <img src={fanfest} className="sliderimg" alt=""/>
+                </a>
+                <footer>Latest annoucements for what's to come and an amazing convention!</footer>
+            </p>
+            <p>
+                <a
+                href="https://na.finalfantasyxiv.com/lodestone/community_finder/"
+                target="_blank"
+                rel="noreferrer">
+                <img src={community1} className="sliderimg" alt=""/>
+                </a>
+                <footer>Are you a Warrior of Light and looking for fellow adventurers? Check out the community hub and free companies!</footer>
+            </p>
+            <p>
+                <a
+                href="https://na.finalfantasyxiv.com/"
+                target="_blank"
+                rel="noreferrer">
+                <img src={community2} className="sliderimg"alt=""/>
+                </a>
+                <footer>Ready to start your adventure? Join with the free trial today!</footer>
+                </p>
             </AliceCarousel>
         </div>
         </div>

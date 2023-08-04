@@ -24,6 +24,12 @@
     object-fit: contain;
 }
 
+.sliderimg:hover {
+    border-color: rgb(0, 217, 255);
+    box-shadow: 5px 10px 30px white;
+    cursor: pointer;
+}
+
 .alice-carousel__prev-btn-wrapper {
     text-align: center;
 }
