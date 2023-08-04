@@ -12,14 +12,17 @@ import community2 from '../imgs/community2.png';
 function FFXIV() {
 
     return (
-        <div className="App">
+    <div className="App">
         <header className="Page-header">
         <Mininav />
         <p className="game-title">Have you heard of the critically acclamined MMORPG...?</p>
         </header>
+        <div className="info-box">
+            <h1>What is Final Fantasy?</h1>
+        </div>
         <div className="slideshow-box">
             <AliceCarousel autoplay autoPlayInterval="5" style="width: 500px">
-            <p>
+            <h2>
                 <a 
                 href="https://na.finalfantasyxiv.com/dawntrail"
                 target="_blank"
@@ -27,8 +30,8 @@ function FFXIV() {
                 <img src={dawntrail} className="sliderimg" alt=""/>
                 </a>
                 <footer>New expansion coming Summer 2024!</footer>
-            </p>
-            <p>
+            </h2>
+            <h2>
                 <a
                 href="https://fanfest.finalfantasyxiv.com/"
                 target="_blank"
@@ -36,8 +39,8 @@ function FFXIV() {
                 <img src={fanfest} className="sliderimg" alt=""/>
                 </a>
                 <footer>Latest annoucements for what's to come and an amazing convention!</footer>
-            </p>
-            <p>
+            </h2>
+            <h2>
                 <a
                 href="https://na.finalfantasyxiv.com/lodestone/community_finder/"
                 target="_blank"
@@ -45,8 +48,8 @@ function FFXIV() {
                 <img src={community1} className="sliderimg" alt=""/>
                 </a>
                 <footer>Are you a Warrior of Light and looking for fellow adventurers? Check out the community hub and free companies!</footer>
-            </p>
-            <p>
+            </h2>
+            <h2>
                 <a
                 href="https://na.finalfantasyxiv.com/"
                 target="_blank"
@@ -54,10 +57,10 @@ function FFXIV() {
                 <img src={community2} className="sliderimg"alt=""/>
                 </a>
                 <footer>Ready to start your adventure? Join with the free trial today!</footer>
-                </p>
+            </h2>
             </AliceCarousel>
         </div>
-        </div>
+    </div>
         
     )
 }

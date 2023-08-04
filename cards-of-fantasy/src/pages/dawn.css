@@ -20,6 +20,10 @@
 
 .choice-box:hover {
     cursor: pointer;
+    border-color: rgb(0, 217, 255);
+    box-shadow: 5px 5px 5px rgb(1, 103, 111);
+    color: rgb(0, 133, 157);
+    font-size: 25px;
 }
 
 .text-box {
