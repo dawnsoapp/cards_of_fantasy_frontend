@@ -17,12 +17,9 @@ function FFXIV() {
         <Mininav />
         <p className="game-title">Have you heard of the critically acclamined MMORPG...?</p>
         </header>
-        <div className="info-box">
-            <h1>What is Final Fantasy?</h1>
-            <p>Final Fantasy is a game created by Square Enix.</p>
-        </div>
-        <div className="slideshow-box">
-            <AliceCarousel autoplay autoPlayInterval="5">
+        <main>
+            <div className="slideshow-box">
+                <AliceCarousel autoplay autoPlayInterval="5">
             <h2>
                 <a 
                 href="https://na.finalfantasyxiv.com/dawntrail"
@@ -59,8 +56,13 @@ function FFXIV() {
                 </a>
                 <footer>Ready to start your adventure? Join with the free trial today!</footer>
             </h2>
-            </AliceCarousel>
-        </div>
+                </AliceCarousel>
+            </div>
+            <div className="info-box">
+                <h1>What is Final Fantasy?</h1>
+                <p>Final Fantasy is a game created by Square Enix.</p>
+            </div>
+        </main>
     </div>
         
     )
