@@ -14,6 +14,9 @@ function Dawn() {
     const intro = "intro";
     const stay_inside = "stay_inside";
     const go_outside = "go_outside";
+    const ishgard = "ishgard";
+    const uldah = "uldah";
+
 
     let story = {
         "intro": [
@@ -53,8 +56,14 @@ function Dawn() {
                 storyPrompt: 1,
                 storyRoute: stay_inside,
                 speaker: dawn,
-                text: "Are you interested in my globe? Isn't it cute!?"
+                text: "Although, living in Ishgard, I'd say it's not too bad compared to Uldah."
             },
+            {
+                storyPrompt: 1,
+                storyRoute: stay_inside,
+                speaker: dawn,
+                text: "Hm? You don't know what those places are? Which one would you like me to talk about?"
+            }
         ],
         "go_outside": [
             {
@@ -68,8 +77,72 @@ function Dawn() {
                 storyRoute: go_outside,
                 speaker: dawn,
                 text: "Limsa Lominsa! This is where all of it began for me. It's quite a lively hub!"
-            }
+            },
+            {
+                storyPrompt: 2,
+                storyRoute: go_outside,
+                speaker: dawn,
+                text: "I miss the good old days of swinging a rusty axe around in my tattered, weird-looking gear."
+            },
+            {
+                storyPrompt: 2,
+                storyRoute: go_outside,
+                speaker: dawn,
+                text: "Actually, scratch that on the gear. I looked absolutely dreadful in those garbs."
+            },
+            {
+                storyPrompt: 2,
+                storyRoute: go_outside,
+                speaker: dawn,
+                text: "Glamours were so hard to obtain back in those days. But as a maurauder, I guess you needn't worry about such things."
+            },
+            {
+                storyPrompt: 2,
+                storyRoute: go_outside,
+                speaker: dawn,
+                text: "Warrior was plenty of fun though! A great introductory to the tank class, in my opinion."
+            },
         ],
+        "ishgard": [
+            {
+                storyPrompt: 3,
+                storyRoute: ishgard,
+                speaker: dawn,
+                text: "My humble abode! The Holy See of Ishgard is a city-state that rests in the snowy mountains alongside Dravania, home of the dragons."
+            },
+            {
+                storyPrompt: 3,
+                storyRoute: ishgard,
+                speaker: dawn,
+                text: "Weather is pretty much chilly all year-round. Snow storms and hail galore! Although during the summer, it's not too bad. Quite beautiful actually."
+            },
+            {
+                storyPrompt: 3,
+                storyRoute: ishgard,
+                speaker: dawn,
+                text: "Not long ago, Ishgard was actually at war with the dragons. They have special squadrons under the class 'Dragoons' that helped fight to protect their city."
+            },
+            {
+                storyPrompt: 3,
+                storyRoute: ishgard,
+                speaker: dawn,
+                text: "Why, I have a great friend who was actually one of Ishgard's best! His name is Estinien."
+            },
+            {
+                storyPrompt: 3,
+                storyRoute: ishgard,
+                speaker: dawn,
+                text: "He's rough around the edges, but once you get to know him, he's quite the sassy comrade. I'm sure you'd love to meet him."
+            },
+            {
+                storyPrompt: 3,
+                storyRoute: ishgard,
+                speaker: dawn,
+                text: "But enough about that, you asked to see my room! Anything in here that piques your interest?"
+            },
+
+        ],
+        "uldah": [],
         
     }
 
@@ -82,8 +155,8 @@ function Dawn() {
         },
         {
             options: [
-                {id:0, text: "What does that orb do?", route: 3},
-                {id:1, text: "How did you get it?", route: 5}
+                {id:0, text: "Tell me about this place, Ishgard.", route: 3},
+                {id:1, text: "How hot is it in Uldah...?", route: 5}
             ]
         },
         {
