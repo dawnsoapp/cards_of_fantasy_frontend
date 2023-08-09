@@ -56,7 +56,7 @@ function Dawn() {
                 storyPrompt: 1,
                 storyRoute: stay_inside,
                 speaker: dawn,
-                text: "Although, living in Ishgard, I'd say it's not too bad compared to Uldah."
+                text: "Although, living in Ishgard, I'd say it's not too bad compared to Ul'dah."
             },
             {
                 storyPrompt: 1,
@@ -65,6 +65,83 @@ function Dawn() {
                 text: "Hm? You don't know what those places are? Which one would you like me to talk about?"
             }
         ],
+            "ishgard": [
+                {
+                    storyPrompt: 3,
+                    storyRoute: ishgard,
+                    speaker: dawn,
+                    text: "My humble abode! The Holy See of Ishgard is a city-state that rests in the snowy mountains alongside Dravania, home of the dragons."
+                },
+                {
+                    storyPrompt: 3,
+                    storyRoute: ishgard,
+                    speaker: dawn,
+                    text: "Weather is pretty much chilly all year-round. Snow storms and hail galore! Although during the summer, it's not too bad. Quite beautiful actually."
+                },
+                {
+                    storyPrompt: 3,
+                    storyRoute: ishgard,
+                    speaker: dawn,
+                    text: "Not long ago, Ishgard was actually at war with the dragons. They have special squadrons under the class 'Dragoons' that helped fight to protect their city."
+                },
+                {
+                    storyPrompt: 3,
+                    storyRoute: ishgard,
+                    speaker: dawn,
+                    text: "Why, I have a great friend who was actually one of Ishgard's best! His name is Estinien."
+                },
+                {
+                    storyPrompt: 3,
+                    storyRoute: ishgard,
+                    speaker: dawn,
+                    text: "He's rough around the edges, but once you get to know him, he's quite the sassy comrade. I'm sure you'd love to meet him."
+                },
+                {
+                    storyPrompt: 3,
+                    storyRoute: ishgard,
+                    speaker: dawn,
+                    text: "But enough about that, you asked to see my room! Anything in here that piques your interest?"
+                },
+
+            ],
+            "uldah": [
+                {   
+                    storyPrompt: 5,
+                    storyRoute: uldah,
+                    speaker: dawn,
+                    text: "Don't even get me started."
+                },
+                {   
+                    storyPrompt: 5,
+                    storyRoute: uldah,
+                    speaker: dawn,
+                    text: "It's in the middle of the DESERT."
+                },
+                {   
+                    storyPrompt: 5,
+                    storyRoute: uldah,
+                    speaker: dawn,
+                    text: "Wayyy too hot for me and my fur. But it's one of the wealthiest city-states in Eorzea, so they do be collecting that check."
+                },
+                {   
+                    storyPrompt: 5,
+                    storyRoute: uldah,
+                    speaker: dawn,
+                    text: "They said their rent was due. But they should really invest in some kind of housing fan system to keep their citizens cool."
+                },
+                {   
+                    storyPrompt: 5,
+                    storyRoute: uldah,
+                    speaker: dawn,
+                    text: "There were times I thought I'd collapse from heat stroke, especially if I wore armor."
+                },
+                {
+                    storyPrompt: 5,
+                    storyRoute: uldah,
+                    speaker: dawn,
+                    text: "But enough about that, you asked to see my room! Anything in here that piques your interest?"
+                },
+            ],
         "go_outside": [
             {
                 storyPrompt: 2,
@@ -103,71 +180,42 @@ function Dawn() {
                 text: "Warrior was plenty of fun though! A great introductory to the tank class, in my opinion."
             },
         ],
-        "ishgard": [
-            {
-                storyPrompt: 3,
-                storyRoute: ishgard,
-                speaker: dawn,
-                text: "My humble abode! The Holy See of Ishgard is a city-state that rests in the snowy mountains alongside Dravania, home of the dragons."
-            },
-            {
-                storyPrompt: 3,
-                storyRoute: ishgard,
-                speaker: dawn,
-                text: "Weather is pretty much chilly all year-round. Snow storms and hail galore! Although during the summer, it's not too bad. Quite beautiful actually."
-            },
-            {
-                storyPrompt: 3,
-                storyRoute: ishgard,
-                speaker: dawn,
-                text: "Not long ago, Ishgard was actually at war with the dragons. They have special squadrons under the class 'Dragoons' that helped fight to protect their city."
-            },
-            {
-                storyPrompt: 3,
-                storyRoute: ishgard,
-                speaker: dawn,
-                text: "Why, I have a great friend who was actually one of Ishgard's best! His name is Estinien."
-            },
-            {
-                storyPrompt: 3,
-                storyRoute: ishgard,
-                speaker: dawn,
-                text: "He's rough around the edges, but once you get to know him, he's quite the sassy comrade. I'm sure you'd love to meet him."
-            },
-            {
-                storyPrompt: 3,
-                storyRoute: ishgard,
-                speaker: dawn,
-                text: "But enough about that, you asked to see my room! Anything in here that piques your interest?"
-            },
 
-        ],
-        "uldah": [],
         
     }
 
-    let choices = [
-        {
+    let choices = {
+
+        "choiceroot": {
             options: [
                 {id:0, text:"Stay Inside", route:1},
                 {id:1, text:"Let's go outside!", route:2}
             ]
         },
-        {
+        "stay1": {
             options: [
                 {id:0, text: "Tell me about this place, Ishgard.", route: 3},
-                {id:1, text: "How hot is it in Uldah...?", route: 5}
+                {id:1, text: "How hot is it in Ul'dah...?", route: 5}
             ]
         },
-        {
+        "out1": {
             options: [
                 {id:0, text: "A tank...to a healer?", route: 4},
                 {id:1, text: "What was being a warrior like?", route: 6}
             ]
-        }
-    ]
+        },
+        "stay2": {
+            options: [
+                {id:0, text: "That sparkly globe you have...", route: 7},
+                {id:1, text: "Why do you have a statue in your room-", route: 9},
+                {id:2, text: "Cute plushie collection!", route: 11}
+            ]
+        },
+    }
 
     const [currentRoute, setCurrentRoute] = useState(story["intro"]);
+    const [currentOption, setCurrentOption] = useState(choices["choiceroot"]);
+    const [options, setOptions] = useState(currentOption["options"]);
 
     const clickText = () => {
         if ((newText + 1) >= currentRoute.length) {
@@ -180,13 +228,23 @@ function Dawn() {
         } 
     }
 
-    const changeRoute = (route) => {
-        if (route !== currentPrompt) {
-            for(const obj of choices[currentPrompt].options) {
-                if (route === obj.route) {
-                    setCurrentPrompt(obj.route);
-                    changeStory(obj.route);
-                    setChoiceBox(false);
+    const changeRoute = (newRoute) => {
+        if (newRoute !== currentPrompt) {
+            for(const obj in choices) {
+                // console.log(obj);
+                for (const options in choices[obj]){
+                    // console.log(choices[obj][options]);
+                    for (const root of choices[obj][options]){
+                        // console.log(root.route);
+                        if (root.route === newRoute) {
+                            console.log(choices[obj]);
+                            setCurrentPrompt(root.route);
+                            setCurrentOption(choices[obj]);
+                            setOptions(currentOption["options"]);
+                            changeStory(root.route);
+                            setChoiceBox(false);
+                    }
+                    }
                 }
             }
         }
@@ -213,7 +271,7 @@ function Dawn() {
         <div>
         {showChoiceBox ? (
             <div className="chat">
-            {choices[currentPrompt].options.map((option) => {
+            {currentOption.options.map((option) => {
             return (
                 <ul
                 className="choice-box"
