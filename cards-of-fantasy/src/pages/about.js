@@ -11,6 +11,11 @@ function About() {
         <Mininav />
         <p className="game-title">About Me</p>
         </header>
+        <div>
+            <h1>Meet Dawn's Counterpart!</h1>
+            <p>Hello, my name is Madison Jackson, creator of Cards of Fantasy!</p>
+            <p>Great, I'll pick you up at 8.</p>
+        </div>
         </div>
     )
 };
