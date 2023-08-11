@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './game.css'
 import '../components/mininav.css';
+import '../components/timer.js';
 import Mininav from '../components/mininav'
 
 
