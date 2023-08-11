@@ -231,11 +231,12 @@ function Dawn() {
     const changeRoute = (newRoute) => {
         if (newRoute !== currentPrompt) {
             for(const obj in choices) {
-                // console.log(obj);
+                console.log("current prompt: ", currentPrompt);
                 for (const options in choices[obj]){
                     // console.log(choices[obj][options]);
                     for (const root of choices[obj][options]){
-                        // console.log(root.route);
+                        console.log(root.route);
+                        console.log("newRoute: ", newRoute);
                         if (root.route === newRoute) {
                             console.log(choices[obj]);
                             setCurrentPrompt(root.route);
