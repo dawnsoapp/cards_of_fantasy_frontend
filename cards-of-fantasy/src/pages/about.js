@@ -3,6 +3,7 @@ import './about.css';
 import '../components/mininav.css';
 import Mininav from '../components/mininav'
 import Madi from '../imgs/Madi.JPG';
+import { postQuestion } from "../components/question";
 
 
 function About() {
@@ -27,21 +28,27 @@ function About() {
             <div className="meet-me">
                 <h1>Question Board</h1>
                 <p>Upvote on questions people submit if you'd like to hear an answer as well!</p>
-                <questionBoard/>
+                <questionList/>
             </div>
         </main>
         <main>
             <div className="submit-box">
                 <h2>Want to learn more about Dawn or see new features? Drop a question here!</h2>
+                <form onSubmit={() => postQuestion()}>
                 <label>
+                    Name: <input
+                    type="string"
+                    name="user"
+                    />
                     Question: <input
                     type="string"
-                    name="question"
+                    name="message"
                     // onChange={submitName}
                     // value={username}
                     />
                     <button>Submit</button>
                 </label>
+                </form>
             </div>
         </main>
         </div>

@@ -1,20 +1,30 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import { REACT_APP_BACKEND_URL } from "./backend";
 
+//POST
+export const postQuestion = () => {
+    return axios
+    .post(`${REACT_APP_BACKEND_URL}/question`)
+
+}
+
+
+//PATCH
 const handleUpvote = (id) => {
 
-    const upvoteQuestion = (id) => {
+    const upvoteQuestion = () => {
     return axios
-        .patch(`${URL}`)
+        .patch(`${REACT_APP_BACKEND_URL}/question`)
         .then(res => console.log("Question upvoted!", res.data))
         .catch(err => console.log("Error in upvoting question!", err.message))
     }
 
-    upvoteQuestion(id)
+    upvoteQuestion()
     }
 
 
-const Question = ({id, user, message, upvoteCount, handleUpvote}) => {
+const Question = ({id, user, message, upvoteCount}) => {
     const upvoteClick = () => handleUpvote(id);
 
     return (
@@ -30,7 +40,6 @@ Question.propTypes = {
     id: PropTypes.number.isRequired,
     message: PropTypes.string.isRequired,
     upvoteCount: PropTypes.number.isRequired,
-    handleUpvote: PropTypes.func.isRequired
 };
 
 export default Question;
