@@ -6,17 +6,29 @@ import { REACT_APP_BACKEND_URL } from "./backend";
 //POST
 export const postQuestion = (user, message) => {
     return axios
-    .post(`${REACT_APP_BACKEND_URL}/question/`, {"user": user, "message": message}, 
-    // {
-    //     headers: {
-    //     'Content-Type': 'application/json'
-    //     }
-    // }
+    .post (
+    `${REACT_APP_BACKEND_URL}/question/`, {"user": user, "message": message}, 
     )
+    .then((response) => console.log("successful post!", response.data)) 
+    .catch((e) => console.log("Error posting question!", e.message));
 
 }
-
-
+// GET
+export const showQuestions = () => {
+    const convertQuestionFromAPI = (data) => {
+        return {
+            user: data.user,
+            message: data.message,
+            upvote: data.upvote
+        };
+    };
+    return axios
+    .get(`${REACT_APP_BACKEND_URL}/question/`)
+    .then((response) => {
+        return (response.data.map(convertQuestionFromAPI))
+    })
+    .catch((e) => console.log("error during showQuestions"))
+}
 
 
 //PATCH
@@ -24,7 +36,7 @@ const handleUpvote = (id) => {
 
     const upvoteQuestion = () => {
     return axios
-        .patch(`${REACT_APP_BACKEND_URL}/question`)
+        .patch(`${REACT_APP_BACKEND_URL}/question/<id>/`, {})
         .then(res => console.log("Question upvoted!", res.data))
         .catch(err => console.log("Error in upvoting question!", err.message))
     }
@@ -33,25 +45,28 @@ const handleUpvote = (id) => {
     }
 
 
-const Question = ({id, user, message, upvoteCount}) => {
-    const upvoteClick = () => handleUpvote(id);
+const Question = ({user, message, upvote}) => {
+    const upvoteClick = () => handleUpvote();
 
     return (
         <div>
-            <p>{user}</p>
-            <p>{message}</p>
-            <p count={upvoteCount} handleUpvote={upvoteClick}/>
+            <h2>Name:{user}</h2>
+            <p>Message:{message}</p>
+            <button onClick={upvoteClick}>{upvote}</button>
         </div>
     )
 };
 
 Question.propTypes = {
     id: PropTypes.number.isRequired,
+    user: PropTypes.string.isRequired,
     message: PropTypes.string.isRequired,
-    upvoteCount: PropTypes.number.isRequired,
+    upvote: PropTypes.number.isRequired,
+    postQuestion: PropTypes.func.isRequired,
+    showQuestions: PropTypes.func.isRequired,
+    handleUpvote: PropTypes.func.isRequired,
 };
 
 export default Question;
-
     
 

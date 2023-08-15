@@ -12,6 +12,7 @@ function Game() {
     const [score, setScore] = useState(0)
     const [currentQuestion, setCurrentQuestion] = useState(0)
     const [showFinalScore, setShowFinalScore] = useState(false)
+    const [user, setUser] = useState("")
     const questions = [
         {
             card: "The Bole",
@@ -101,6 +102,10 @@ function Game() {
             setCurrentQuestion(0);
             setShowFinalScore(false);
           };
+    
+    const changeUser = (event) => {
+        setUser(event.target.value)
+        }  
 
 
     return (
@@ -115,6 +120,14 @@ function Game() {
           <h2>
             {score} out of {questions.length} correct!
           </h2>
+          <h3>
+          Name:<input
+          type="string"
+          name="user"
+          onChange={changeUser}
+          value={user}
+          />
+          </h3>
           <button onClick={() => restartGame()}>Play Again?</button>
         </div>
         ) 

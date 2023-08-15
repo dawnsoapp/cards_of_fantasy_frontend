@@ -1,16 +1,24 @@
-import React, { useState } from "react";
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
 import './about.css';
 import '../components/mininav.css';
 import Mininav from '../components/mininav'
 import Madi from '../imgs/Madi.JPG';
-import { postQuestion } from "../components/question";
+import Question, { postQuestion, showQuestions } from "../components/question";
+import QuestionList from "../components/questionList";
+
 
 
 function About() {
-
+    const defaultEmptyList = [{
+        id: 0,
+        user: '',
+        message: '',
+        upvote: 0
+    }]
     const [user, setUser] = useState("")
     const [message, setMessage] = useState("")
+    const [questions, setQuestions] = useState(defaultEmptyList)
+
 
     const changeUser = (event) => {
         setUser(event.target.value)
@@ -40,7 +48,11 @@ function About() {
             <div className="meet-me">
                 <h1>Question Board</h1>
                 <p>Upvote on questions people submit if you'd like to hear an answer as well!</p>
-                {/* <Question/> */}
+                <div>
+                    <QuestionList entries={questions}
+                    showQuestions={showQuestions}
+                    />
+                </div>
             </div>
         </main>
         <main>
