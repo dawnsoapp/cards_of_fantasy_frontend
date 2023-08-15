@@ -1,24 +1,62 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { REACT_APP_BACKEND_URL } from "../components/backend";
 import './about.css';
 import '../components/mininav.css';
 import Mininav from '../components/mininav'
 import Madi from '../imgs/Madi.JPG';
-import Question, { postQuestion, showQuestions } from "../components/question";
 import QuestionList from "../components/questionList";
-
-
+// import Question from "../components/question";
 
 function About() {
-    const defaultEmptyList = [{
-        id: 0,
-        user: '',
-        message: '',
-        upvote: 0
-    }]
     const [user, setUser] = useState("")
     const [message, setMessage] = useState("")
-    const [questions, setQuestions] = useState(defaultEmptyList)
+    const [upvote, setUpvote] = useState(0)
+    const [questions, setQuestions] = useState([])
 
+    //GET
+    const showQuestions = () => {
+        const convertQuestionFromAPI = (data) => {
+            return {
+                user: data.user,
+                message: data.message,
+                upvote: data.upvote
+            };
+        };
+        return axios
+        .get(`${REACT_APP_BACKEND_URL}/question/`)
+        .then((response) => {
+            console.log("Successfully opened backend")
+            setQuestions(response.data)
+            console.log(response.data)
+            return (response.data.map(convertQuestionFromAPI))
+        })
+        .catch((e) => console.log("error during showQuestions"))
+    }
+    
+    //POST
+    const postQuestion = (user, message) => {
+        return axios
+        .post (
+        `${REACT_APP_BACKEND_URL}/question/`, {"user": user, "message": message}, 
+        )
+        .then((response) => console.log("successful post!", response.data)) 
+        .catch((e) => console.log("Error posting question!", e.message));
+
+    }
+
+    //PATCH
+    const handleUpvote = (id) => {
+
+        const upvoteQuestion = () => {
+        return axios
+            .patch(`${REACT_APP_BACKEND_URL}/question/<id>/`)
+            .then(res => console.log("Question upvoted!", res.data))
+            .catch(err => console.log("Error in upvoting question!", err.message))
+        }
+
+        upvoteQuestion()
+        }
 
     const changeUser = (event) => {
         setUser(event.target.value)
@@ -47,11 +85,14 @@ function About() {
             </div>
             <div className="meet-me">
                 <h1>Question Board</h1>
-                <p>Upvote on questions people submit if you'd like to hear an answer as well!</p>
+                <p onClick={showQuestions}>Upvote on questions people submit if you'd like to hear an answer as well!</p>
                 <div>
-                    <QuestionList entries={questions}
-                    showQuestions={showQuestions}
-                    />
+                    <QuestionList
+                    entries={questions}
+                    key={questions.id}
+                    >
+                    {questions}
+                    </QuestionList>
                 </div>
             </div>
         </main>

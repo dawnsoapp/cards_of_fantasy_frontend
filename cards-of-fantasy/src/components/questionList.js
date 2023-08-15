@@ -4,18 +4,21 @@ import Question from './question';
 
 
 const QuestionList = (props) => {
-    const getQuestions = props.entries.map((question) => {
         return (
-            <Question
-            id = {question.id}
-            user={question.user}
-            message={question.message}
-            upvote={question.upvote}
-            />
-            )
-        })
-    return <div>{getQuestions}</div>
-    };
+        <section>
+            <ul>
+            {props.entries.map((question) => {
+                <Question
+                id = {question.id}
+                user = {question.user}
+                message = {question.message}
+                upvote = {question.upvote}
+                />
+            })
+        }
+            </ul>
+            </section>
+        )};
 
 
     QuestionList.propTypes = {
@@ -27,9 +30,11 @@ const QuestionList = (props) => {
                 upvote: PropTypes.number.isRequired
             })
         ),
-        postQuestion: PropTypes.func.isRequired,
-        showQuestions: PropTypes.func.isRequired,
-        handleUpvote: PropTypes.func.isRequired,
+
     }
 
 export default QuestionList;
+
+// postQuestion: PropTypes.func.isRequired,
+// showQuestions: PropTypes.func.isRequired,
+// handleUpvote: PropTypes.func.isRequired,
