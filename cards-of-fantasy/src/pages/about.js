@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from 'axios';
 import './about.css';
 import '../components/mininav.css';
 import Mininav from '../components/mininav'
@@ -7,6 +8,17 @@ import { postQuestion } from "../components/question";
 
 
 function About() {
+
+    const [user, setUser] = useState("")
+    const [message, setMessage] = useState("")
+
+    const changeUser = (event) => {
+        setUser(event.target.value)
+    }   
+    const changeMessage = (event) => {
+        setMessage(event.target.value)
+    }   
+
     return (
         <div className="App">
         <header className="Page-header">
@@ -28,23 +40,25 @@ function About() {
             <div className="meet-me">
                 <h1>Question Board</h1>
                 <p>Upvote on questions people submit if you'd like to hear an answer as well!</p>
-                <questionList/>
+                {/* <Question/> */}
             </div>
         </main>
         <main>
             <div className="submit-box">
                 <h2>Want to learn more about Dawn or see new features? Drop a question here!</h2>
-                <form onSubmit={() => postQuestion()}>
+                <form onSubmit={() => postQuestion(user, message)}>
                 <label>
                     Name: <input
                     type="string"
                     name="user"
+                    onChange={changeUser}
+                    value={user}
                     />
                     Question: <input
                     type="string"
                     name="message"
-                    // onChange={submitName}
-                    // value={username}
+                    onChange={changeMessage}
+                    value={message}
                     />
                     <button>Submit</button>
                 </label>

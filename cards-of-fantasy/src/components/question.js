@@ -1,13 +1,22 @@
 import React from "react";
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import { REACT_APP_BACKEND_URL } from "./backend";
 
 //POST
-export const postQuestion = () => {
+export const postQuestion = (user, message) => {
     return axios
-    .post(`${REACT_APP_BACKEND_URL}/question`)
+    .post(`${REACT_APP_BACKEND_URL}/question/`, {"user": user, "message": message}, 
+    // {
+    //     headers: {
+    //     'Content-Type': 'application/json'
+    //     }
+    // }
+    )
 
 }
+
+
 
 
 //PATCH
