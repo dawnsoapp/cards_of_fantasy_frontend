@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import { REACT_APP_BACKEND_URL } from "../components/backend";
 import './about.css';
@@ -11,7 +11,7 @@ import QuestionList from "../components/questionList";
 function About() {
     const [user, setUser] = useState("")
     const [message, setMessage] = useState("")
-    const [upvote, setUpvote] = useState(0)
+    // const [upvote, setUpvote] = useState(0)
     const [questions, setQuestions] = useState([])
 
     //GET
@@ -46,7 +46,7 @@ function About() {
     }
 
     //PATCH
-    const handleUpvote = (id) => {
+    // const handleUpvote = (id) => {
 
         const upvoteQuestion = () => {
         return axios
@@ -56,7 +56,7 @@ function About() {
         }
 
         upvoteQuestion()
-        }
+        // }
 
     const changeUser = (event) => {
         setUser(event.target.value)
