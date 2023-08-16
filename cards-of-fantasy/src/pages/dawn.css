@@ -28,6 +28,7 @@
 .dawn-sprite{
     height: 500px;
     width: 400px;
+    margin-bottom: -60px;
 }
 .fit-sprite {
     justify-content: center;
