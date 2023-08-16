@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
     <Routes>
-      <Route index element={<Home />} path="home" />
+      <Route index element={<Home />} />
       <Route element={<Home />} path="home" />
       <Route element={<Dawn />} path="dawn" />
       <Route element={<FFXIV />} path="ffxiv" />
