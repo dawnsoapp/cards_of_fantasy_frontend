@@ -1,5 +1,7 @@
+
 .App {
   text-align: center;
+  background-image: url("./imgs/hydaelyncrystal.jpeg")
 }
 
 /* .App-logo {
@@ -24,6 +26,12 @@
   color: black;
 }
 
+.img {
+  height: 550px;
+  margin-right: 20rem;
+
+}
+
 .Page-header {
   background-color: lightpink;
   min-height: 5vh;
@@ -33,13 +41,9 @@
 }
 
 .Select-box {
-  /* height: 15rem;
-  width: 15rem; */
   background-color: rgb(251, 161, 206);
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  float: right;
   padding: 1rem;
   margin: 10px;
   text-align: center;
@@ -60,6 +64,12 @@
   align-self: center;
   text-align: center;
   width: -webkit-fill-available;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 /* .App-link {
   color: #61dafb;

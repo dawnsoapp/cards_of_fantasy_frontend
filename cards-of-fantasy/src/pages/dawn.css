@@ -1,6 +1,5 @@
 .chat {
     position: relative;
-    top: 25rem;
     align-items: center;
 }
 
@@ -26,8 +25,16 @@
     font-size: 25px;
 }
 
+.dawn-sprite{
+    height: 500px;
+    width: 400px;
+}
+.fit-sprite {
+    justify-content: center;
+}
 .text-box {
         background-color: pink;
+        /* width: 900px; */
         padding: 20px;
         margin: 10px;
         height: fit-content;

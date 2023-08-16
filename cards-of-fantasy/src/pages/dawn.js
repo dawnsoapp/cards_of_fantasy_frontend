@@ -5,6 +5,7 @@ import * as prompts from '../data/prompt.js';
 import Mininav from '../components/mininav'
 
 
+
 function Dawn() {
     const [chat, setChat] = useState(prompts.intro1)
 
@@ -25,6 +26,7 @@ function Dawn() {
         <p className="game-title">Chat with Dawn!</p>
         </header>
         <div>
+        <img className="dawn-sprite" src={chat.sprite} alt=""/>
         {chat.option.length > 0 ? (
             <div className="chat">
             {chat.option.map((option) => {
