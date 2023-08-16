@@ -8,12 +8,15 @@ const QuestionList = (props) => {
         <section>
             <ul>
             {props.entries.map((question) => {
+                return(
                 <Question
                 id = {question.id}
                 user = {question.user}
                 message = {question.message}
                 upvote = {question.upvote}
                 />
+                )
+                
             })
         }
             </ul>
