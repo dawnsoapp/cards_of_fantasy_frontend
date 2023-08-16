@@ -388,49 +388,49 @@ class storyPrompt {
 // //go_outside
     export const go_outside1 = new storyPrompt(
         "Dawn", 
-        "",
+        dawntalk,
         "Sounds great! Would love to get some air and touch grass.", 
         "go_outside2", 
         []
         )
     export const go_outside2 = new storyPrompt(
         "Dawn", 
-        "",
+        dawnlove,
         "Limsa Lominsa! This is where all of it began for me. It's quite a lively hub!", 
         "go_outside3", 
         []
         )
     export const go_outside3 = new storyPrompt(
         "Dawn", 
-        "",
+        dawnsad,
         "I miss the good old days of swinging a rusty axe around in my tattered, weird-looking gear.", 
         "go_outside4", 
         []
         )
     export const go_outside4 = new storyPrompt(
         "Dawn", 
-        "",
+        dawnangry,
         "Actually, scratch that on the gear. I looked absolutely dreadful in those garbs.", 
         "go_outside5", 
         []
         )
     export const go_outside5 = new storyPrompt(
         "Dawn", 
-        "",
+        dawntalk,
         "Glamours were so hard to obtain back in those days. But as a maurauder, I guess you needn't worry about such things.", 
         "go_outside6", 
         []
         )
     export const go_outside6 = new storyPrompt(
         "Dawn", 
-        "",
+        dawntalk,
         "Warrior was plenty of fun though! A great introductory to the tank class, in my opinion.", 
         "go_outside7", 
         []
         )
     export const go_outside7 = new storyPrompt(
         "You", 
-        "",
+        dawnwait,
         "", 
         "", 
         [{id:0, text: "A tank...to a healer?", next: "healer1"},
@@ -440,96 +440,249 @@ class storyPrompt {
             //healer 
             export const healer1 = new storyPrompt(
                 "Dawn", 
-                "",
+                dawntalk,
                 "Yeah, quite the 180, isn't it? To be honest, I enjoyed tanking...at least in dungeons.", 
                 "healer2", 
                 []
                 )
             export const healer2 = new storyPrompt(
                 "Dawn", 
-                "",
+                dawnsad,
                 "But when the trials started getting harder, and it required proper timing to switch aggro with ur duo tank...I got overwhelmed! Tanxiety is real!!", 
                 "healer3", 
                 []
                 )
             export const healer3 = new storyPrompt(
                 "Dawn", 
-                "",
+                dawnsad,
                 "Don't get me wrong though, switching to Astrologian was also stressful. Trying to keep everyone alive, remembering to remove debuffs etc.", 
                 "healer4", 
                 []
                 )
             export const healer4 = new storyPrompt(
                 "Dawn", 
-                "",
+                dawntalk,
                 "But I felt more comfortable in that role. I was good at reading my party's health, timing when to do mass heals or focus on shielding the tank when necessary.", 
                 "healer5", 
                 []
                 )
             export const healer5 = new storyPrompt(
                 "Dawn", 
-                "",
+                dawntalk,
                 "Since I had experience as a tank, I knew when they would need a healer's help because I've been in those very same situations!", 
                 "healer6", 
                 []
                 )
             export const healer6 = new storyPrompt(
                 "Dawn", 
-                "",
+                dawnlove,
                 "Plus, Astrologian is just so much fun. Using cards to buff my teammates while also doing flashy healing moves, what more can a miquo'te ask for?", 
                 "healer7", 
                 []
                 )
             export const healer7 = new storyPrompt(
-                "Dawn", 
-                "",
+                "You", 
+                dawnwait,
                 "", 
                 "", 
                 [{id:0, text: "What's the difference between Astrologian and the other healing classes?", next: "difference1"},
                 {id:1, text: "What other places do you go to, by the way? Any recommendations?", next: "places1"}]
                 )
 
+                //difference
+                export const difference1 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "Presently, there are four classes: White Mage, Astrologian, Scholar, and Sage.", 
+                    "difference2", 
+                    []
+                    )
+                export const difference2 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "Then there are two categories: Regen and Shield. Regen healers are White Mage and Astrologian, while Shield healers are Scholar and Sage.", 
+                    "difference3", 
+                    []
+                    )
+                export const difference3 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "White Mage is a pure healer whereas Astrologian is more of a buffing healer. Not only do we make sure you stay alive, we also boost your damage with our cards!", 
+                    "difference4", 
+                    []
+                    )
+                export const difference4 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "It's a pretty busy class compared to the others since you have to remember to buff often while also healing and attacking!", 
+                    "difference5", 
+                    []
+                    )
+                export const difference5 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "I prefer the busy aspect of it because it really feels like I have to know what I'm doing if I want to fully optimize my abilities.", 
+                    "difference6", 
+                    []
+                    )
+                export const difference6 = new storyPrompt(
+                    "You", 
+                    dawnwait,
+                    "", 
+                    "", 
+                    [{id:0, text: "What other places do you go to, by the way? Any recommendations?", next: "outend1"}]
+                    )
+
             //warrior
             export const warrior1 = new storyPrompt(
                 "Dawn", 
-                "",
+                dawnlove,
                 "It was plenty of fun! Pulling every single monster in sight and slaying them all! (Don't do this if your gear is bad)", 
                 "warrior2", 
                 []
                 )
             export const warrior2 = new storyPrompt(
                 "Dawn", 
-                "",
+                dawnlove,
                 "You really feel like you wield all the power, especially in PvP. Or at least that's how Warrior feels to me.", 
                 "warrior3", 
                 []
                 )
             export const warrior3= new storyPrompt(
                 "Dawn", 
-                "",
+                dawntalk,
                 "If you like to take the lead and be on the frontline, it's the perfect role for you! The gear also looks really cool. Especially Dark Knight.", 
                 "warrior4", 
                 []
                 )
             export const warrior4= new storyPrompt(
                 "Dawn", 
-                "",
+                dawntalk,
                 "And the further you progress in your journey, the more moves you learn and the flashier you'll look~", 
                 "warrior5", 
                 []
                 )
             export const warrior5= new storyPrompt(
                 "Dawn", 
-                "",
+                dawntalk,
                 "At the end of the day, you fight to look badass.", 
                 "warrior6", 
                 []
                 )
             export const warrior6= new storyPrompt(
-                "Dawn", 
-                "",
+                "You", 
+                dawnwait,
                 "", 
                 "warrior7", 
-                [{id:0, text: "If Limsa is a 'starter' city, why are there still so many people here who aren't new to the game?", next: "difference1"},
-                {id:1, text: "What other places do you go to, by the way? Any recommendations?", next: "places1"}]
+                [{id:0, text: "If Limsa is a 'starter' city, why are there still so many people here who aren't new to the game?", next: "limsa1"},
+                {id:1, text: "What other places do you go to, by the way? Any recommendations?", next: "outend1"}]
+                )
+
+                //limsa
+                export const limsa1 = new storyPrompt(
+                    "Dawn", 
+                    dawnangry,
+                    "It's a very popular hub because of...many reasons. Some good and some...not so good, ha ha.", 
+                    "limsa2", 
+                    []
+                    )
+                export const limsa2 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "The marketboards to buy items and glams is literally 5 feet away from the port, so it's super convenient.", 
+                    "limsa3", 
+                    []
+                    )
+                export const limsa3 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "Also a lot of end game players love to showcase their glams and high-end weapons and gear to the new players.", 
+                    "limsa4", 
+                    []
+                    )
+                export const limsa4 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "I guess it gives them a spark of motivation to keep playing so that one day they can flex their hard earned gear!", 
+                    "limsa5", 
+                    []
+                    )
+                export const limsa5 = new storyPrompt(
+                    "Dawn", 
+                    dawnangry,
+                    "It's also a hub to...connect~? With people? But...just be careful, there can be some interesting characters.", 
+                    "limsa6", 
+                    []
+                    )
+                export const limsa6 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "Unless you're not phased by any of it, by all means have fun! But if it's new to you, then maybe just stick to the MSQ.", 
+                    "limsa6", 
+                    []
+                    )
+                export const limsa7 = new storyPrompt(
+                    "Dawn", 
+                    dawnlove,
+                    "Regardless, it's a fun spot! You see people performing shows, maybe a group matching fits and doing dances etc! You can chill there for hours and not get bored!", 
+                    "limsa8", 
+                    []
+                    )
+                export const limsa8 = new storyPrompt(
+                    "Dawn", 
+                    dawntalk,
+                    "", 
+                    "", 
+                    [{id:0, text: "What other places do you go to, by the way? Any recommendations?", next: "outend1"}]
+                    )
+            
+            //outend
+            export const outend1 = new storyPrompt(
+                "Dawn", 
+                dawntalk,
+                "I love visiting Old Sharlayan, Elpis and Il Mheg. They're aestheticlally pleasing to the eye. If I want a calm place to craft, they would be there.", 
+                "outend2", 
+                []
+                )
+            export const outend2 = new storyPrompt(
+                "Dawn", 
+                dawnlove,
+                "And my goodness, places with good music would have to be South Shroud in Gridania and then Amh Araeng in (spoiler location).", 
+                "outend3", 
+                []
+                )
+            export const outend3 = new storyPrompt(
+                "Dawn", 
+                dawnlove,
+                "There's just a lot of beautiful things to see when exploring Eorzea.", 
+                "outend4", 
+                []
+                )
+            export const outend4 = new storyPrompt(
+                "Dawn", 
+                dawntalk,
+                "My places may be great to visit, but I think you may find other places to be your go to instead.", 
+                "outend5", 
+                []
+                )
+            export const outend5 = new storyPrompt(
+                "Dawn", 
+                dawntalk,
+                "With that, it appears our talk has come to an end! This site is still updating, so I hope we will be able to talk more about Eorzea in the future!", 
+                "outend6", 
+                []
+                )
+            export const outend6 = new storyPrompt(
+                "Dawn", 
+                dawntalk,
+                "Take care, Warrior of Light! Hope to see you again soon!", 
+                "outend7", 
+                []
+                )
+            export const outend7 = new storyPrompt(
+                "Dawn", 
+                dawnwait,
+                "", 
+                "", 
+                [{id:0, text: "(Go back to the beginning)", next: "intro1"}]
                 )

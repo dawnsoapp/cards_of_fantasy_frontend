@@ -60,7 +60,18 @@ function FFXIV() {
             </div>
             <div className="info-box">
                 <h1>What is Final Fantasy?</h1>
-                <p>Final Fantasy is a game created by Square Enix.</p>
+                <p> Final Fantasy is a massive multiplayer online role-playing game first released in 2010.
+                    Since then, it has grown and flourished into a full-fledged RPG with one of the biggest
+                    gaming communities.
+                </p>
+                <p> The game is set in a fantasy region of Eorzea where they have just recovered from a 
+                    Great Calamity; however, darkness and corruption still stirs in the mist, and you,
+                    the Warrior of Light, are there to uncover the darkness with the help of the Scions!
+                </p>
+                <p> As you traverse deeper and deeper, the web becomes more intricate, you meet more 
+                    characters, spread your wings into different worlds and classes.
+                    Completely immerse yourself into the world of FFXIV!
+                </p>
             </div>
         </main>
     </div>

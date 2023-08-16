@@ -42,10 +42,15 @@ h2 {
 .info-box {
     display: flex;
     flex-direction: column;
-    float: right;
+    background-color: pink;
     width: 40%;
+    height: fit-content;
     margin: 50px;
+    padding: 20px;
+    border: outset;
+    border-width: 10px;
     border-color: palevioletred;
+    font-size: 20px;
 }
 
 main {

@@ -1,57 +1,113 @@
+.Game-App {
+    text-align: center;
+    background-color: rgb(255, 236, 251);
+}
 .instructions {
     font-size: 35px;
     text-align: center;
+    background-color: lightpink;
+    border: outset;
+    border-width: 10px;
+    border-color: palevioletred;
+    padding: 40px;
+    margin-top: -5px;
+}
+
+.title-screen {
+    font-size: 50px;
+    background-color: lightpink;
+    border: outset;
+    border-width: 10px;
+    border-color: palevioletred;
+    margin-top: -1px;
+}
+
+.game-image {
+    height: 400px;
+    margin-top: -70px;
+}
+
+.card-instructions {
+    font-size: 30px;
+    background-color: lightblue;
+    border: outset;
+    border-color: paleturquoise;
+    border-width: 10px;
 }
 
 .battle-box {
-    background-color: lightgreen;
-    min-height: 30vh;
+    background-image: url('../imgs/dungeon.jpg');
+    height: 200px;
     display: flex;
     border: inset;
     border-color: black;
     border-width: 10px;
 }
+.card {
+    display: flex;
+    background-color: pink;
+    border: outset;
+    border-color: palevioletred;
+    border-width: 10px;
+    padding: 5px;
+    text-align: center;
+    width: auto;
+    align-self: center;
+    justify-content: center;
+}
 
+.start-button {
+    background-color: lightpink;
+    border: outset;
+    border-width: 10px;
+    border-color: palevioletred;
+    font-size: 30px;
+    width: 450px;
+    margin-right: 10px;
+}
+
+.card-button {
+    background-color: lightblue;
+    border: outset;
+    border-width: 10px;
+    border-color: paleturquoise;
+    font-size: 30px;
+    width: 450px;
+    margin-left: 10px;
+}
+
+.start-button:hover {
+    border-color: rgb(255, 16, 92);
+    color: rgb(255, 16, 92);
+}
+
+.card-button:hover {
+    border-color: #0062f4;
+    color: #0062f4;
+}
+
+.text {
+    text-align: center;
+    background-color: pink;
+    border: outset;
+    border-color: palevioletred;
+    border-width: 10px;
+    padding: 10px;
+    width: auto;
+}
 .tank {
     display: flex;
-    height: 70px;
-    width: 70px;
     padding: 1rem;
-    margin: 35px;
-    margin-top: 40px;
-    background-color: blue;
-    color: black;
-    border: solid;
-    border-color: black;
-    border-width: 5px;
 }
 
 .melee {
     display: flex;
-    height: 70px;
-    width: 70px;
     padding: 1rem;
-    margin: 35px;
-    margin-top: 40px;
-    background-color: red;
-    color: black;
-    border: solid;
-    border-color: black;
-    border-width: 5px;
 }
 
 .caster {
     display: flex;
-    height: 70px;
-    width: 70px;
     padding: 1rem;
-    margin: 35px;
-    margin-top: 40px;
-    background-color: purple;
-    color: black;
-    border: solid;
-    border-color: black;
-    border-width: 5px;
 }
 
 .monster {
@@ -64,15 +120,25 @@
     display: flex;
     text-align: center;
     justify-content: center;
+    background-color: lightpink;
+    border: outset;
+    border-width: 10px;
+    border-color: palevioletred;
+    width: fit-content;
+    float: center;
     font-size: 25px;
     padding: -10px;
-    margin: 0px;
+    margin: 10px;
 
 }
 
 .question-box {
     padding: 10px;
-    margin: 40px;
+    /* margin: 40px; */
+    border: outset;
+    border-radius: 25px;
+    border-width: 20px;
+    border-color: palevioletred;
     background-color: rgb(255, 221, 226);
     color: white;
 }

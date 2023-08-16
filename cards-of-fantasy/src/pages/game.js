@@ -7,6 +7,7 @@ import meleedps from '../imgs/meleedps.png';
 import casterdps from '../imgs/casterdps.png';
 import tank from '../imgs/tank.png';
 import monster from '../imgs/monster.png';
+import dawnhome from '../imgs/dawnhome.png';
 
 
 function Game() {
@@ -113,7 +114,7 @@ function Game() {
 
 
     return (
-        <div className="App">
+        <div className="Game-App">
         <header className="Page-header">
         <Mininav />
         </header>
@@ -138,10 +139,11 @@ function Game() {
         : 
         (
         // TUTORIAL SCREEN
-        <div>
+        <div className="Game-App">
         {showTutorialScreen ? (
-        <div> 
-        <h1>Think Like an Astrologian!</h1>
+        <div className="tutorial-screen"> 
+        <h1 className="title-screen">Think Like an Astrologian!</h1>
+        <img className="game-image" src={dawnhome} alt=""/>
         <p className="instructions">You are currently in a party running a dungeon as an Astrologian!
             Astrologians have a divining deck known as the Arcanum which 
             buffs their fellow players to do more damage! However, each 
@@ -149,12 +151,12 @@ function Game() {
             Astrologian, it is up to you to know which card goes to which 
             class! Are you up for the task?
         </p>
-        <button onClick={() => startGame()}>Start</button>
-        <button onClick={() => cardInstructions()}>About the Cards</button>
+        <button className="start-button" onClick={() => startGame()}>Start</button>
+        <button className="card-button" onClick={() => cardInstructions()}>About the Cards</button>
 
         {/* ABOUT CARDS */}
         {showCardInstructions ? (
-            <div>
+            <div className="card-instructions">
                 <h2>How Cards Work</h2>
                 <p>Magic Cards: Ewer, Spire and Bole
                 <li>These will strengthen Casters & Healers!</li>
@@ -172,15 +174,15 @@ function Game() {
     (
         // THE GAME
     <div>
-    <p className="score">Score: {score}</p>
     <div className="battle-box">
-        <img src={casterdps} alt=""/>
-        <img src={meleedps} alt=""/>
-        <img src={tank} alt=""/>
+        <img className="caster" src={casterdps} alt=""/>
+        <img className="melee" src={meleedps} alt=""/>
+        <img className="tank" src={tank} alt=""/>
         <img className="monster" src={monster} alt=""/>
     </div>
-    <h3>{questions[currentQuestion].card}</h3>
-    <h4>{questions[currentQuestion].text}</h4>
+    <p className="score">Score: {score}</p>
+    <h3 className="card">{questions[currentQuestion].card}</h3>
+    <h4 className="text">{questions[currentQuestion].text}</h4>
     <ul className="question-box">
         {questions[currentQuestion].options.map((option) => {
           return (
