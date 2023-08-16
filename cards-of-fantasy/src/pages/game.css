@@ -66,6 +66,16 @@
     margin-right: 10px;
 }
 
+.reset-button {
+    background-color: lightpink;
+    border: outset;
+    border-width: 10px;
+    border-color: palevioletred;
+    font-size: 20px;
+    width: 200px;
+    margin-right: 10px;
+}
+
 .card-button {
     background-color: lightblue;
     border: outset;
@@ -77,6 +87,11 @@
 }
 
 .start-button:hover {
+    border-color: rgb(255, 16, 92);
+    color: rgb(255, 16, 92);
+}
+
+.reset-button:hover {
     border-color: rgb(255, 16, 92);
     color: rgb(255, 16, 92);
 }

@@ -133,7 +133,7 @@ function Game() {
           value={user}
           />
           </h3>
-          <button onClick={() => restartGame()}>Play Again?</button>
+          <button className="reset-button" onClick={() => restartGame()}>Play Again?</button>
         </div>
         ) 
         : 
