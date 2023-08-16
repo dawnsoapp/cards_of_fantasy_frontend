@@ -3,6 +3,10 @@ import './game.css'
 import '../components/mininav.css';
 import '../components/timer.js';
 import Mininav from '../components/mininav'
+import meleedps from '../imgs/meleedps.png';
+import casterdps from '../imgs/casterdps.png';
+import tank from '../imgs/tank.png';
+import monster from '../imgs/monster.png';
 
 
 function Game() {
@@ -170,10 +174,10 @@ function Game() {
     <div>
     <p className="score">Score: {score}</p>
     <div className="battle-box">
-        <div className="caster">CASTER</div>
-        <div className="melee">MELEE</div>
-        <div className="tank">TANK</div>
-        <div className="monster">MONSTER</div>
+        <img src={casterdps} alt=""/>
+        <img src={meleedps} alt=""/>
+        <img src={tank} alt=""/>
+        <img className="monster" src={monster} alt=""/>
     </div>
     <h3>{questions[currentQuestion].card}</h3>
     <h4>{questions[currentQuestion].text}</h4>

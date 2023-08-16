@@ -55,17 +55,9 @@
 }
 
 .monster {
-    display: flex;
-    height: 70px;
-    width: 70px;
     padding: 1rem;
-    margin-left: 550px;
+    margin-left: 400px;
     margin-top: 40px;
-    background-color: yellow;
-    color: black;
-    border: solid;
-    border-color: black;
-    border-width: 5px;
 }
 
 .score {
