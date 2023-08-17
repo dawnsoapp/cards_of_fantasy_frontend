@@ -87,6 +87,8 @@ function About() {
                 <h1>Question Board</h1>
                 <p onClick={showQuestions}>Upvote on questions people submit if you'd like to hear an answer as well!</p>
                 <div>
+                    <h2> Under Construction!</h2>
+                    <p>Feature will be displayed in next update!</p>
                     <QuestionList
                     entries={questions}
                     key={questions.id}

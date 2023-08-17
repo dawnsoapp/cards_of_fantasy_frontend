@@ -284,7 +284,7 @@ class storyPrompt {
                             )
 
 
-//             //uldah
+             //uldah
             export const uldah1 = new storyPrompt(
                 "Dawn", 
                 dawnangry,
@@ -331,7 +331,7 @@ class storyPrompt {
                 "You", 
                 dawnwait,
                 "", 
-                "uldah7", 
+                "", 
                 [{id:0, text: "That orb...it's so sparkly~", next: "orb1"},
                 {id:1, text: "Why do you have a statue in your room-", next: "statue1"},
                 {id:2, text: "You have so many plushies.", next: "plushies1"}]
@@ -482,11 +482,11 @@ class storyPrompt {
                 )
             export const healer7 = new storyPrompt(
                 "You", 
-                dawnwait,
+                dawntalk,
                 "", 
                 "", 
                 [{id:0, text: "What's the difference between Astrologian and the other healing classes?", next: "difference1"},
-                {id:1, text: "What other places do you go to, by the way? Any recommendations?", next: "places1"}]
+                {id:1, text: "What other places do you go to, by the way? Any recommendations?", next: "outend1"}]
                 )
 
                 //difference
@@ -571,9 +571,9 @@ class storyPrompt {
                 )
             export const warrior6= new storyPrompt(
                 "You", 
-                dawnwait,
+                dawntalk,
                 "", 
-                "warrior7", 
+                "", 
                 [{id:0, text: "If Limsa is a 'starter' city, why are there still so many people here who aren't new to the game?", next: "limsa1"},
                 {id:1, text: "What other places do you go to, by the way? Any recommendations?", next: "outend1"}]
                 )
@@ -630,7 +630,7 @@ class storyPrompt {
                     )
                 export const limsa8 = new storyPrompt(
                     "Dawn", 
-                    dawntalk,
+                    dawnwait,
                     "", 
                     "", 
                     [{id:0, text: "What other places do you go to, by the way? Any recommendations?", next: "outend1"}]
